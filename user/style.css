@@ -1,0 +1,407 @@
+/*Login Reg Page*/
+.login-and-reg-body{
+    background-image: url("../photos/res1.jpg") ;
+    background-size: cover;
+    background-position: center;
+}
+.login-reg-page{
+    width:360px;
+    margin:auto;
+    padding: 10% 0 0;
+}
+.welcomeText{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+   
+}
+
+.login-reg-form{
+
+    background : rgba(233, 172, 207, 0.4);
+    margin: 0 auto 100px;
+    padding: 45px;
+    z-index: 1;
+    position: relative;
+    max-width: 360px;
+    text-align: center;
+    
+}
+.login-reg-form input{
+    background: white;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.login-reg-form button{
+    text-transform: uppercase;
+    background:rgb(65, 0, 102);
+    border: 0;
+    width: 50%;
+    padding: 15px;
+    color:white;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+.login-reg-form button:hover, .login-reg-form button:active{
+    background: rgb(226, 75, 240);
+}
+
+.login-reg-form .message{
+    margin: 15px 0 0;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+   
+}
+.login-reg-form .message a{
+    color:rgb(65, 0, 102);
+    font-size: larger;
+    text-decoration:none;
+    font-weight: bolder;
+}
+
+.login-reg-form .register-form{
+    display: none;
+}
+
+/*profile */
+.profile-page-body{
+    background-image: url("../photos/res5.jpg") ;
+    background-size: cover;
+    background-position: center;
+}
+.profile-page{
+    width: 360px;
+    padding: 10% 0 0;
+    margin:auto;
+}
+
+.profile-form-div{
+
+    background : rgba(233, 172, 207, 0.4);
+    margin: 0 auto 100px;
+    padding: 45px;
+    max-width: 360px;
+    text-align: center;
+    
+}
+.profile-form input{
+    background: white;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: 14px;
+}
+.profile-form .message2{
+    margin: 15px 0 0;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.profile-form button{
+    text-transform: uppercase;
+    background:rgb(65, 0, 102);
+    border: 0;
+    width: 50%;
+    padding: 15px;
+    color:white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* homepage */
+.homePageBody{
+    background-image: url("../photos/res3.jpg") ;
+    background-size: cover;
+    background-position: center;
+}
+.homepage-slide{
+    margin-left: 25%;
+    width: 50%;
+    height: auto;
+    background-color: rgb(201, 172, 228);
+    padding: 10px;
+    margin-top: 10px;
+}
+.home-slide{
+    padding: 10px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aboutUs{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(227, 182, 233);
+}
+.aboutUsButton{
+    background-color: rgb(235, 209, 176);
+    padding: 5px;
+    font-weight:bold;
+    border: 0;
+}
+.aboutUsButton a{
+    text-decoration: none;
+}
+
+/* user side bar */
+.userSideBar{
+    position: fixed;
+    width: 250px;
+    height: auto;
+    background: rgba(233, 172, 207, 0.4);
+    left: -250px;
+    transition: all .5s ease;
+}
+.userSideBar header{
+    font-size: 20px;
+    user-select: none;
+    line-height: 50px;
+    padding-top: 20px;
+    padding-left:10px;
+}
+a.userSideBarLink{
+    display: block;
+    text-decoration: none;
+    width: auto;
+    line-height: 50px;
+    font-size: 16px;
+    border-top: 1px solid blueviolet;
+    border-bottom:1px solid blueviolet ;
+    background-color: rgb(240, 180, 234);
+}
+ul.userSideBarUl{
+    list-style-type: none;
+}
+a.userSideBarLink:hover{
+    padding-left: 10px;
+}
+.userSideBar ul a i{
+    margin-right: 10px;
+}
+#check{
+    display: none;
+}
+label #btn,label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: blueviolet;
+    border-radius: 3px;
+}
+label #btn{
+    left: 15px;
+    top: 20px;
+    font-size: 16px;
+    padding: 6px 12px;
+    transition: all .5s ease;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -200px;
+    top: 20px;
+    font-size: 16px;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .userSideBar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 200px;
+}
+
+/* foods page */
+.food-category{
+    display: flex;
+    background-color: rgb(245, 235, 242);
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 5px;
+
+}
+.food-category > div{
+    background-color: white;
+    margin : 5px;
+    padding: 20px;
+}
+
+.food-image{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 0px;
+    transition: transform .2s;
+}
+.food-image:hover{
+   transform: scale(1.5);
+}
+.food-text{
+    padding: 5px;
+    background-color: rgb(235, 219, 240);
+    height: 60px;
+    width: 150px;
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-weight: bolder;
+}
+
+.food-order-button{
+    background:rgb(236, 217, 165);
+    border: 0;
+    padding: 5px;
+    color:black;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    
+}
+.food-order-button a{
+    text-decoration: none;
+}
+.food-order-button:hover , .food-order-button:active{
+    background-color:rgb(236, 139, 236) ;
+}
+
+.food-category-header{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding: 40px;
+
+}
+/*food order */
+.food-order-container{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 2%;
+   
+}
+.food-order-image{
+   width: 200px;
+   height: 190px;
+   
+}
+.food-order-left{
+   padding: 30px;
+    background-color: rgb(255, 218, 252);
+}
+.food-order-right{
+    padding: 20px;
+    background-color: rgb(251, 245, 253);
+}
+.food-order-right2{
+    padding: 20px;
+    background-color: rgb(251, 245, 253);
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-right: 25%;
+}
+.back-to-food-menu{
+   margin-left: 345px;
+   background:rgb(236, 217, 165);
+   border: 0;
+   padding: 5px;
+   color:black;
+   font-size: 10px;
+   font-weight: bold;
+   cursor: pointer;
+}
+.back-to-food-menu a{
+    text-decoration: none;
+}
+
+/*  Purchase table  */
+.purchase{
+    border-collapse: collapse;
+    margin: 25px 45px 0px;
+    border:2px solid black;
+    width: 450px;
+}
+.purchase thead tr{
+    background-color:rgb(193, 151, 233);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.purchase th, .purchase td{
+    padding: 15px;
+}
+.purchase tbody tr{
+    border: 1px solid rgb(193, 151, 233);
+    text-align: center;
+}
+.addButton{
+    background:rgb(236, 217, 165);
+    border: 0;
+    padding: 5px;
+    color:black;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.addButton a{
+    text-decoration: none;
+}
+
+/* addRatind.php */
+.addRatingReview{
+    background : rgba(233, 172, 207, 0.4);
+    margin: 100 0 0 400px;
+    padding: 45px;
+    max-width: 400px;
+    text-align: center;
+}
+.addrrForm{
+    background: white;
+    border:0;
+    margin:15px;
+    padding: 15px;
+    font-size: 14px;
+}
+.addrrForm p{
+    font-weight: bold;
+}
+.addrrForm button{
+    background:rgb(236, 217, 165);
+    border: 0;
+    padding: 5px;
+    color:black;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*rating.php - show all rating and review */
+.review-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+    width: 850px;
+}
+.review-item{
+    margin: 10px;
+    padding:5px;
+    background-color: rgb(220, 203, 236);
+}
+
+

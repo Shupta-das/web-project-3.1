@@ -1,0 +1,23 @@
+/* Manager Tables */
+.manager-tables{
+    border: 2px solid black;
+    margin: 25px 45px 0px;
+    width: auto;
+    
+}
+.manager-tables thead tr{
+    background-color:rgb(193, 151, 233);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+.manager-tables th, .manager-tables td{
+    padding: 15px;
+}
+.manager-tables tbody tr{
+    text-align: center;
+}
+.manager-button{
+    background-color: burlywood;
+    border: none;
+}
