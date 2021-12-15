@@ -20,4 +20,41 @@
 .manager-button{
     background-color: burlywood;
     border: none;
+    cursor: pointer;
+}
+.manager-tables a{
+    text-decoration: none;
+}
+.manager-div{
+    width: 360px;
+    padding: 10% 0 0;
+    margin:auto;
+}
+.manager-div-form{
+    border: 1px solid blueviolet;
+    max-width: 360px;
+    text-align: center;
+}
+.manager-form input{
+    
+    background: rgb(227, 191, 243);
+    width: 100%;
+    border:0;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.manager-form .message2{
+    margin: 5px 0 0;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+.add-new-food{
+    margin-left: 50px;
+    padding: 10px;
+    background-color: rgb(226, 215, 240);
+    width:500px;
+    text-align: center;
 }
