@@ -1,5 +1,30 @@
 <?php 
 include "connection.php";
+$warningMsg=NULL;
+if(isset($_POST['add'])){
+    $fcId=$_POST['fcId'];
+    $foodName=$_POST['newFoodName'];
+    $foodPrice=$_POST['newFoodPrice'];
+    $foodStatus=$_POST['newFoodStatus'];
+    $foodImage=$_FILES['newFoodImage']['name'];
+    if($fcId==NULL || $foodName==NULL||$foodPrice==NULL||$foodImage==NULL||$foodStatus==NULL){
+        $warningMsg="Please fill up all sections.";
+    }
+    else{
+        $foodPhotoTemp=$_FILES['newFoodImage']['tmp_name'];
+        $targetFile="../foodPhotos/$foodImage";
+        move_uploaded_file($foodPhotoTemp,$targetFile);
+    }
+
+    $query2="INSERT INTO food (fcId,foodName,foodPrice,foodImage,foodStatus) 
+    VALUES('$fcId','$foodName','$foodPrice','$foodImage','$foodStatus')";
+    $result2=mysqli_query($connection,$query2);
+    if(!$result2){
+        die("query Failed" . mysqli_error());
+    }
+
+}
+
 ?>
 <html lang="en">
 <head>
@@ -12,14 +37,29 @@ include "connection.php";
 <body>
 <h1 style="padding:80px 100px 10px;">Foods</h1>
 <div class="add-new-food">
-<form action="" method="post" name="addNewFood"></form>
-<input type="text" name="newFoodCat" placeholder="New Food category">
+<form action="" method="post" enctype="multipart/form-data">
+<label for="foodCategory">Select the Category:</label>
+<select name="fcId" id="foodCategory">
+    <?php 
+        $queryf="SELECT * FROM foodCategory ";
+        $result=mysqli_query($connection,$queryf);
+        if(!$result){
+            die("query failed" . mysqli_error());
+        }
+        while($rowf=mysqli_fetch_assoc($result)){
+            $fcId=$rowf['fcId'];
+            $fcName=$rowf['fcName'];
+            echo "<option value='" . $fcId . "'>". $fcName . "</option>";
+        }
+    ?>
+</select>
 <input type="text" name="newFoodName" placeholder="New Food Name"><br>
 <input type="text" name="newFoodPrice" placeholder="New Food Price">
 <input type="text" name="newFoodStatus" placeholder="Status"><br><br>
 <label for="">New Food Image: </label>
 <input type="file" name="newFoodImage"><br><br>
 <button class="manager-button" type="submit" name="add">Add+</button><br>
+<p style="color:red;font-weight:bold;"><?php echo $warningMsg; ?></p>
 </form>
 </div>
 
