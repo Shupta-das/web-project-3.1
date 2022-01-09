@@ -24,6 +24,7 @@ include "connection.php";
             <th>Transaction Id</th>
             <th>Date</th>
             <th>Status</th>
+            <th>Update</th>
         </tr>
     </thead>
     <tbody>
@@ -44,7 +45,10 @@ include "connection.php";
                 $foodName=$row['foodName'];
                 $totalPrice=$row['totalPrice'];
                 $orderStatus=$row['orderStatus'];
-
+                $status = false;
+                $val=0;
+                if($orderStatus==1){$status = true;}
+               
                 echo "<tr><td>" . $foId . 
                 "</td><td>" . $userId . 
                 "</td><td>" . $fId . 
@@ -52,9 +56,14 @@ include "connection.php";
                 "</td><td>" . $amount . 
                 "</td><td>" . $totalPrice . 
                 "</td><td>" . $transactionId . 
-                "</td><td>" . $orderDate . 
-                "</td><td>" . $orderStatus . 
-                "</td></tr>" ;
+                "</td><td>" . $orderDate .
+                 "</td><td><input type='checkbox' name='status' id='status'";
+                if($status){
+                    echo "checked>";
+                }
+
+    
+               echo "</td><td><button type='submit' class='manager-button'><a href='foodOrderUpdate.php?foId=$foId'>Update</a></button></td></tr>" ;
 
             }
         ?>
