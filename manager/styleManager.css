@@ -22,6 +22,9 @@
     border: none;
     cursor: pointer;
 }
+.manager-button a{
+    text-decoration: none;
+}
 .manager-tables a{
     text-decoration: none;
 }
@@ -56,5 +59,23 @@
     padding: 10px;
     background-color: rgb(226, 215, 240);
     width:500px;
+    text-align: center;
+}
+
+.manager-home-container{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 2%;
+   
+}
+.manager-home-left{
+   padding: 30px;
+    background-color: rgb(255, 218, 252);
+}
+.manager-home-right{
+    padding: 20px;
+    background-color: rgb(251, 245, 253);
+}
+.manager-header{
     text-align: center;
 }
