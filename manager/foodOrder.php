@@ -46,8 +46,9 @@ include "connection.php";
                 $totalPrice=$row['totalPrice'];
                 $orderStatus=$row['orderStatus'];
                 $status = false;
-                $val=0;
+               // $val=0;
                 if($orderStatus==1){$status = true;}
+                $checkboxStatusName = "st" . $foId ;
                
                 echo "<tr><td>" . $foId . 
                 "</td><td>" . $userId . 
@@ -56,20 +57,34 @@ include "connection.php";
                 "</td><td>" . $amount . 
                 "</td><td>" . $totalPrice . 
                 "</td><td>" . $transactionId . 
-                "</td><td>" . $orderDate .
-                 "</td><td><input type='checkbox' name='status' id='status'";
-                if($status){
-                    echo "checked>";
+                "</td><td>" . $orderDate ;
+                
+                 
+                 echo "</td><td><input type='checkbox' name='$checkboxStatusName' id='$checkboxStatusName'";
+                 if($status){
+                    echo " checked>" ;
                 }
-
-    
-               echo "</td><td><button type='submit' class='manager-button'><a href='foodOrderUpdate.php?foId=$foId'>Update</a></button></td></tr>" ;
+                else{
+                    echo " >" ;
+                }
+                echo "</td><td><button type='submit' class='manager-button' onclick='updateOrder($foId,$checkboxStatusName);'>Update</button></td></tr>" ;
 
             }
         ?>
     </tbody>
 
 </table>
+<!---<p id='statusOrder'>hhhhh</p>-->
+<script>
+    function updateOrder(foId,checkboxStatusName){
+        var checkboxStatus=checkboxStatusName.checked;
+        window.location.href="foodOrderUpdate.php?foId="+foId+"&checkboxStatus="+checkboxStatus;
+        //var stt = document.getElementById('st');
+        //var st=stt.checked;
+        //console.log(st);
+        //document.getElementById('statusOrder').innerHTML = checkValue + " " + price + " "+ st.checked;
+    }
+</script>
     
 </body>
 </html>
