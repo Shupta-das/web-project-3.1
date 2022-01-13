@@ -1,7 +1,12 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['userId'])){
+  die("Not logged in!!");
+}
 include "userSideBar.php";
 include "connection.php";
-session_start();
+//session_start();
 ?>
 <html lang="en">
 <head>

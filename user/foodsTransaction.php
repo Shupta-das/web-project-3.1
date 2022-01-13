@@ -1,4 +1,9 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['userId'])){
+  die("Not logged in!!");
+}
   // echo "aaaa";
   include "connection.php";
    $transId=$_GET["transId"];
@@ -13,9 +18,9 @@
    echo $price;echo "<br>";
   //echo $portion;echo "<br>";
   echo $foodName;*/
-  session_start();
+  //session_start();
   $userId=$_SESSION['userId'];
-  echo $userId;
+  //echo $userId;
   $query = "INSERT INTO foodorder (userId,fId,foodName,amount,totalPrice,transactionId,orderStatus,orderDate ) ";
   $query .= "VALUES ('$userId','$fId','$foodName','$amount','$price','$transId','$orderStatus','$orderDate') ";
   $result=mysqli_query($connection,$query);

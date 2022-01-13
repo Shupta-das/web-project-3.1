@@ -35,7 +35,8 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="styleManager.css">
 </head>
 <body>
-<h1 style="padding:80px 100px 10px;">Foods</h1>
+<button style="margin:80px 100px 2px;" class='manager-button'><a href="managerHome.php">Back</a></button>
+<h1 style="padding:2px 100px 10px;">Foods</h1>
 <div class="add-new-food">
 <form action="" method="post" enctype="multipart/form-data">
 <label for="foodCategory">Select the Category:</label>
@@ -77,7 +78,7 @@ if(isset($_POST['add'])){
     </thead>
     <tbody>
         <?php 
-            $query="SELECT * FROM food ";
+            $query="SELECT * FROM food ORDER BY fId DESC ";
             $result=mysqli_query($connection,$query);
             if(!$result)
             {
@@ -94,7 +95,7 @@ if(isset($_POST['add'])){
                 echo "<tr><td>" . $fId . 
                 "</td><td>" . $fcId . 
                 "</td><td>" . $foodName . 
-                "</td><td>" . $foodImage . 
+                "</td><td><img src='../foodPhotos/". $foodImage . "' alt='' width='40px' height='40px'>" .
                 "</td><td>" . $foodPrice . 
                 "</td><td>" . $foodStatus . 
                 "</td><td><button class='manager-button'><a href='foodTableEdit.php?fId=$fId'>Change</a></button>" . 

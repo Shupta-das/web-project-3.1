@@ -1,7 +1,12 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['userId'])){
+  die("Not logged in!!");
+}
 include "userSideBar.php";
 include "connection.php";
-session_start();
+//session_start();
 ?>
 <html lang="en">
 <head>
@@ -27,7 +32,7 @@ session_start();
             <?php 
                     $userId=$_SESSION['userId'];
                     $query="SELECT orderDate,fId,foodName,amount,userId FROM foodorder ";
-                    $query .= "WHERE userId = $userId ";
+                    $query .= "WHERE userId = $userId ORDER BY orderDate DESC ";
                     $result=mysqli_query($connection,$query);
                     if(!$result)
                     {

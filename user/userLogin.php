@@ -9,6 +9,12 @@ $userId=NULL;
 if(isset($_POST['register'])){
     $userName=$_POST['userName'];
     $password=$_POST['password'];
+    if(strlen($password) < 6)
+    {
+        echo "<script>alert('Passward is short!');</script>";
+
+    }
+    else{
     $userEmail=$_POST['userEmail'];
     $userPhoto="../photos/userPhotoLogo.png";
 
@@ -20,6 +26,7 @@ if(isset($_POST['register'])){
     if(!$result){
         die('query failed' . mysqli_error());
     }
+}
 
 }
 
@@ -73,8 +80,8 @@ if(isset($_POST['login'])){
         <div class="login-reg-form">
             <form action="" class="register-form" method ="post" >
                 <input type="text" name = "userName" placeholder="User Name "/>
-                <input type="password" name = "password" placeholder="Password "/>
-                <input type="text" name = "userEmail" placeholder="Email Id "/>
+                <input type="password" name = "password" placeholder="Password (length is at least 6 )"/>
+                <input type="email" name = "userEmail" placeholder="Email Id "/>
                 <button name = "register" type="submit">Register</button>
                 <p class="message">Already Registered? <a href="#">Login</a></p>
             </form>

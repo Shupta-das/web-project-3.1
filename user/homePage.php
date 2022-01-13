@@ -1,4 +1,9 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['userId'])){
+  die("Not logged in!!");
+}
 include "userSideBar.php";
 ?>
 
@@ -19,18 +24,17 @@ include "userSideBar.php";
     <img class="home-slide" src="../foodPhotos/home3.jpg" alt=""style="height:80%;width: 90%;">
     <img class="home-slide" src="../foodPhotos/home9.jpg" alt=""style="height:80%;width: 90%;">
     <img class="home-slide" src="../foodPhotos/home5.jpeg" alt=""style="height:80%;width: 90%;">
-    <img class="home-slide" src="../foodPhotos/home6.jpg" alt=""style="height:80%;width: 90%;">
     <img class="home-slide" src="../foodPhotos/home7.jpg" alt=""style="height:80%;width: 90%;">
     <img class="home-slide" src="../foodPhotos/home8.jpg" alt=""style="height:80%;width: 90%;">
-    <img class="home-slide" src="../foodPhotos/home10.jpg" alt=""style="height:80%;width: 90%;">
     </div>
     
     <div id="about" class="aboutUs">
     <p style="font-size:larger;font-weight:bold;text-align:center;">About Us </p>
-    <p>RestManage Team</p>
-    <p>We welcome you to sit back, unwind and appreciate the lovely sights and hints of the ocean while our best gourmet expert sets you up a scrumptious dinner utilizing the best and freshest ingredients.’Company Name’s legacy comes from The parent  Restaurant which was built up in 1963.</p>
-    <p>Organization’s story</p>
-    <p>Organizer, Craig Stephen, opened the first ‘Organization Name’ Restaurant in Los Alamitos, California on September 27, 1977. Today, there are 37 areas all through Arizona, California, Illinois, Louisiana, Nevada, Oregon, Tennessee, and Washington.</p>
+    <p>~RestManage Team~</p>
+    <p>If your routine isn’t quite “routine,” worry not. From 5-minute meals to 30+ minute masterpieces with options for veggie, low-carb or cal-conscious – you’ll find tons of meals that fit your changing schedule and tastes.</p>
+    <p>Thanking You, Shupta</p>
+    <p>Contact-</p>
+    <p>das1707001@stud.kuet.ac.bd</p>
 
     </div>
     

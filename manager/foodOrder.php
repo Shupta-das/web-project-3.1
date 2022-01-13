@@ -11,7 +11,8 @@ include "connection.php";
     <link rel="stylesheet" href="styleManager.css">
 </head>
 <body>
-<h1 style="padding:80px 100px 10px;">Food Orders</h1>
+<button style="margin:80px 100px 2px;" class='manager-button'><a href="managerHome.php">Back</a></button>
+<h1 style="padding:2px 100px 10px;">Food Orders</h1>
 <table class="manager-tables">
     <thead>
         <tr>

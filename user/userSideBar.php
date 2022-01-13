@@ -21,7 +21,7 @@
             <li><a href="foods.php" class="userSideBarLink"><i class="fas fa-utensils"></i>Foods</a></li>
             <li><a href="purchases.php" class="userSideBarLink"><i class="fas fa-receipt"></i>Purchases</a></li>
             <li><a href="ratings.php" class="userSideBarLink"><i class="fas fa-star"></i>Ratings & Reviews</a></li>
-            <li><a href="location.php" class="userSideBarLink"><i class="fas fa-location-arrow"></i>Location</a></li>
+            <li><a href="logout.php" class="userSideBarLink"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
         </ul>
     </div>
     <section></section>

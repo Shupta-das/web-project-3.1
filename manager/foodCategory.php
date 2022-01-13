@@ -11,7 +11,9 @@ include "connection.php";
     <link rel="stylesheet" href="styleManager.css">
 </head>
 <body>
-<h1 style="padding:80px 100px 10px;">Food Categories</h1>
+<button style="margin:80px 100px 2px;" class='manager-button'><a href="managerHome.php">Back</a></button>
+<h1 style="padding:2px 100px 10px;">Food Categories</h1>
+
 <input style="margin-left:45px;" type="text" id="newFcN" placeholder="New Food Category">
 <button style="margin-left:30px;" class="manager-button" type="button" name="addfc" onclick="addfc();">Add+</button>
 <p id="fcWarning" style="color:red;font-weight:bold;"></p>

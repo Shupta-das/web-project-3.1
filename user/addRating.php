@@ -1,4 +1,9 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['userId'])){
+  die("Not logged in!!");
+}
     include "connection.php";
     $fId=$_GET['fId'];
    // echo $fId;
