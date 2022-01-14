@@ -4,7 +4,6 @@ session_start();
 if(!isset($_SESSION['userId'])){
   die("Not logged in!!");
 }
-  // echo "aaaa";
   include "connection.php";
    $transId=$_GET["transId"];
    $amount=$_GET["portion"];
@@ -27,6 +26,16 @@ if(!isset($_SESSION['userId'])){
   if(!$result){
     die('query failed' . mysqli_error());
   }
+  
+  //cookie
+
+  $cookieValue=$foodName;
+  $lastOrderedFoodName = "lastOrderOf" . $userId;
+  
+  if(isset($_COOKIE[$lastOrderedFoodName])){
+    setcookie($lastOrderedFoodName,"",time()-1,"/","",0);
+  }
+  setcookie($lastOrderedFoodName,$cookieValue,time()+(86400*30),"/","",0);
 
 ?>
 

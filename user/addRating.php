@@ -7,7 +7,7 @@ if(!isset($_SESSION['userId'])){
     include "connection.php";
     $fId=$_GET['fId'];
    // echo $fId;
-    session_start();
+    //session_start();
     $userId=$_SESSION['userId'];
    // echo $userId;
    $query="SELECT foodName FROM food WHERE fId ='$fId' ";

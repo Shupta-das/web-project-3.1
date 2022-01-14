@@ -6,7 +6,9 @@ if(!isset($_SESSION['userId'])){
 }
 include "userSideBar.php";
 include "connection.php";
+$cookieFoodName=NULL;
 //session_start();
+
 ?>
 <html lang="en">
 <head>
@@ -19,7 +21,16 @@ include "connection.php";
 <body>
 
     <?php 
-        //session_start();
+        
+        //COOKIE
+        $lastOrderedFoodName = "lastOrderOf" . $_SESSION['userId'];
+
+        if(isset($_COOKIE[$lastOrderedFoodName])){
+          $cookieFoodName=$_COOKIE[$lastOrderedFoodName];
+          echo "<p style='padding-top:20px;font-size:larger;font-weight:bold;text-align:center;color:red;'>You ordered ". $cookieFoodName . " last time. Try something new!</p> ";
+         }
+
+
         $query="SELECT * FROM foodcategory ; ";
         $result=mysqli_query($connection,$query);
         if(!$result){
@@ -38,6 +49,7 @@ include "connection.php";
            if(!$result2){
              die('query failed' . mysqli_error());
            }
+
            echo "<div class='food-category-header'>". $row['fcName'] . " Items: </div>";
            echo "<div class='food-category'>";
            /*echo "<p class='category-name'>" . $row['fcName'] . " Items :</p>";*/
