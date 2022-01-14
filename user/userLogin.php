@@ -48,6 +48,10 @@ if(isset($_POST['login'])){
             $_SESSION['userId']=$row['userId'];
             
             //echo "password matched"; echo "<br>";
+            if($userEmail=="adminkhaidai@gmail.com"){
+                header("Location: http://localhost/restManage/manager/managerHome.php");
+            exit();
+            }
 
             header("Location: http://localhost/restManage/user/homePage.php");
             exit();
