@@ -47,7 +47,7 @@ if(!isset($_SESSION['userId'])){
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="foods-more-body">
   <div class="food-order-right2">
     <p>Order Placed.Contact with the webside to verify.</p>
     <button class="food-order-button"><a href="homePage.php">Back to home Page </a></button>

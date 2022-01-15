@@ -6,7 +6,7 @@ if(!isset($_SESSION['userId'])){
 }
 include "connection.php";
 include "userSideBar.php";
-session_start();
+//session_start();
 $userId=$_SESSION['userId'];
 //echo $userId;
 $userName=null;

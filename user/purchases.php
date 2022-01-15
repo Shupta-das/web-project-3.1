@@ -16,7 +16,7 @@ include "connection.php";
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="purchases-body">
     <h1 style="padding:80px 100px 10px;">Purchases~</h1>
     <div>
         <table class="purchase">

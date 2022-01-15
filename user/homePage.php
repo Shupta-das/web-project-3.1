@@ -15,7 +15,7 @@ include "userSideBar.php";
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
 </head>
-<body>
+<body class="user-homepage-background">
     <p style="font-size:larger;font-weight:bold;text-align:center;">Welcome to Khai Dai </p>
     <div style="text-align:center;">
     <button class="aboutUsButton"><a href="#about" ><i class="fas fa-info-circle"></i>About Us</a></button></div>

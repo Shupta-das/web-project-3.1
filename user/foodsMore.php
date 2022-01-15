@@ -46,7 +46,7 @@ if(isset($_POST['transaction'])){
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body class="foods-more-body">
 
        <button class="back-to-food-menu"><a href="foods.php">Back to Food Menu</a></button>
        <div class="food-order-container">

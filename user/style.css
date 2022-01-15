@@ -117,6 +117,12 @@
 }
 
 /* homepage */
+.user-homepage-background{
+    background-image: url("../photos/back10.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .homePageBody{
     background-image: url("../photos/res3.jpg") ;
     background-size: cover;
@@ -126,8 +132,7 @@
     margin-left: 25%;
     width: 50%;
     height: auto;
-    background-color: rgb(201, 172, 228);
-    padding: 10px;
+    padding: 2px;
     margin-top: 10px;
 }
 .home-slide{
@@ -141,7 +146,7 @@
     height: auto;
     margin: 10px;
     padding: 10px;
-    background-color: rgb(227, 182, 233);
+    background-color: rgb(216, 169, 238);
 }
 .aboutUsButton{
     background-color: rgb(235, 209, 176);
@@ -290,6 +295,12 @@ label #cancel{
 
 }
 /*food order */
+.foods-more-body{
+    background-image: url("../photos/back10.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .food-order-container{
     display: flex;
     margin-left: 25%;
@@ -331,6 +342,11 @@ label #cancel{
 }
 
 /*  Purchase table  */
+.purchases-body{
+    background-image: url("../photos/back5.jpg");
+    background-size: cover;
+    background-position: center;
+}
 .purchase{
     border-collapse: collapse;
     margin: 25px 45px 0px;
@@ -392,6 +408,13 @@ label #cancel{
 }
 
 /*rating.php - show all rating and review */
+
+.user-rating-show{
+    background-image: url("../photos/back8.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
 .review-container{
     display: flex;
     flex-direction: column;
