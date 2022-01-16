@@ -16,6 +16,17 @@ if(isset($_POST['register'])){
     }
     else{
     $userEmail=$_POST['userEmail'];
+    $query = "SELECT * FROM user WHERE userEmail = '$userEmail' ; ";
+    $result=mysqli_query($connection,$query);
+    if(!$result){
+        die('query failed' . mysqli_error());
+    }
+    if($row=mysqli_fetch_assoc($result)){
+        echo "<script>alert('This email id is aready registered!');</script>";
+        //die();
+        //header("Location: userLogin.php");
+    }
+    else{
     $userPhoto="../photos/userPhotoLogo.png";
 
     $query="INSERT INTO user (userName,userEmail,password,userPhoto) ";
@@ -26,6 +37,7 @@ if(isset($_POST['register'])){
     if(!$result){
         die('query failed' . mysqli_error());
     }
+}
 }
 
 }
@@ -76,16 +88,16 @@ if(isset($_POST['login'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">    
-    <title>Welcome to ABC Hotel and Restaurant </title>
+    <title>Welcome to KHAI DAI </title>
 </head>
 <body class= "login-and-reg-body">
     <div class="login-reg-page">
-        <p class="welcomeText"> Khai Dai Restaurant</p>
+        <p class="welcomeText">Welcome to KHAI DAI</p>
         <div class="login-reg-form">
             <form action="" class="register-form" method ="post" >
-                <input type="text" name = "userName" placeholder="User Name "/>
-                <input type="password" name = "password" placeholder="Password (length is at least 6 )"/>
-                <input type="email" name = "userEmail" placeholder="Email Id "/>
+                <input type="text" name = "userName" placeholder="User Name " required />
+                <input type="password" name = "password" placeholder="Password (length is at least 6 )" required />
+                <input type="email" name = "userEmail" placeholder="Email Id " required />
                 <button name = "register" type="submit">Register</button>
                 <p class="message">Already Registered? <a href="#">Login</a></p>
             </form>

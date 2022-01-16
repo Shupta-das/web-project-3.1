@@ -59,12 +59,12 @@ if(isset($_POST['transaction'])){
         <div class="food-order-right" method="post">
           <p style="color:red;font-weight:bold;">Only bKash is available for online payment!!!</p> 
           <p class="food-order-text"> How Many Portions?</p>
-          <input type="text" id="portion"></br></br>
+          <input type="text" id="portion" required ></br></br>
           <button class="food-order-button" name="confirm" onclick="orderConfirm()">Confirm</button>
           <p class="food-order-text">Total Price(TK): </p>
           <p id="totalPrice" class="food-order-total-price"></p>
           <p> Your Transaction Id :</p>
-          <input type="text" id="transactionId"></br></br>
+          <input type="text" id="transactionId" required ></br></br>
           <button type="submit" class="food-order-button" name="transaction" onclick="transaction()">Send Transaction Id</button>
         </div>
 
@@ -80,12 +80,15 @@ if(isset($_POST['transaction'])){
          
           if(av){
            val=document.getElementById("portion").value;
-            //document.getElementById("portion").value ="45";
-            price= <?php echo $foodPrice; ?>;
-            price=price*val;
-            //var taka=" TK";
-            //taka=price.concat(taka);
-            document.getElementById("totalPrice").innerHTML = price;
+           if(val){
+                price= <?php echo $foodPrice; ?>;
+                price=price*val;
+                document.getElementById("totalPrice").innerHTML = price;
+           }
+           else{
+             alert("Portion Number is missing!");
+           }
+           
           }
           else{
             document.getElementById("totalPrice").innerHTML = "Not Available,try another item.";
@@ -98,10 +101,14 @@ if(isset($_POST['transaction'])){
           fId=<?php echo $fId; ?>;
          foodName="<?php echo $foodName; ?>" ;
             var transactionId=document.getElementById("transactionId").value;
-            //document.getElementById("totalPrice").innerHTML=transactionId;
-            window.location.href="foodsTransaction.php?fId="+fId+"&foodName="+foodName+"&transId="+transactionId+"&portion="+val+"&price="+price;
-         }
-        
+              if(transactionId){
+                  window.location.href="foodsTransaction.php?fId="+fId+"&foodName="+foodName+"&transId="+transactionId+"&portion="+val+"&price="+price;
+
+              }
+              else{
+                alert("Transaction Id is missing!!!");
+              }
+           }
        }
      </script>
 

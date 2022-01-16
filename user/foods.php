@@ -61,7 +61,7 @@ $cookieFoodName=NULL;
                 echo "<br>";
                 echo "Price : " . $row2['foodPrice'] . "TK </p>";
 
-                echo "<button class='food-order-button' name='foodsMorebtn'><a href='foodsMore.php?fId=$foodId'>More...</a></button></div>";
+                echo "<button class='food-order-button' name='foodsMorebtn'><a href='foodsMore.php?fId=$foodId'>Order Here</a></button></div>";
            }
            echo "</div>";
         }
