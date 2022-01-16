@@ -9,7 +9,7 @@
     <title>Manager Home Page</title>
     <link rel="stylesheet" href="styleManager.css">
 </head>
-<body>
+<body class="manager-home-body">
     <h1 class="manager-header">Manager Section ~</h1>
     <div class="manager-home-container">
         <div class="manager-home-left">

@@ -10,7 +10,7 @@ include "connection.php";
     <title>Food orders</title>
     <link rel="stylesheet" href="styleManager.css">
 </head>
-<body>
+<body class="manager-home-body4">
 <button style="margin:80px 100px 2px;" class='manager-button'><a href="managerHome.php">Back</a></button>
 <h1 style="padding:2px 100px 10px;">Food Orders</h1>
 <table class="manager-tables">

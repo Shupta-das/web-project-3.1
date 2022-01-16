@@ -30,7 +30,7 @@ if(!isset($_SESSION['userId'])){
     <link rel="stylesheet" href="style.css" >
 
 </head>
-<body>
+<body class="add-rating-body">
     <div class="addRatingReview">
         <form action="" class="addrrForm" method="post">
 

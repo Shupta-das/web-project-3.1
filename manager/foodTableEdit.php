@@ -51,7 +51,7 @@ if(isset($_POST['update'])){
     <title>Food Table Edit</title>
     <link rel="stylesheet" href="styleManager.css">
 </head>
-<body>
+<body class="manager-home-body3">
     <div class="manager-div">
     <div class="manager-div-form">
         <form action="" class="manager-form" method="post" enctype="multipart/form-data">

@@ -1,4 +1,37 @@
 /* Manager Tables */
+.manager-home-body{
+    background-image: url("../photos/back9.jpg");
+    background-position: center;
+    background-size: cover;
+   
+}
+.manager-home-body2{
+    background-image: url("../photos/back13.jpg");
+    background-position: center;
+    background-size: 2000px 1500px;
+    background-repeat: repeat;
+   
+}
+.manager-home-body3{
+    background-image: url("../photos/back15.jpg");
+    background-position: center;
+    background-size: cover;
+
+   
+}
+.manager-home-body4{
+    background-image: url("../photos/back13.jpg");
+    background-position: center;
+    background-size: 2900px 1500px;
+    background-repeat: repeat;
+   
+}
+.manager-food-category-body{
+    background-image: url("../photos/back1.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
 .manager-tables{
     border: 2px solid black;
     margin: 25px 45px 0px;
@@ -45,13 +78,13 @@
     border:0;
     margin: 0 0 5px;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
 }
 .manager-form .message2{
     margin: 5px 0 0;
     color: black;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 .add-new-food{
