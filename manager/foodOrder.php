@@ -37,6 +37,8 @@ include "connection.php";
                 die("query failed " . mysqli_error());
             }
             while($row=mysqli_fetch_assoc($result)){
+                $orderStatus=$row['orderStatus'];
+                if($orderStatus==0){
                 $foId=$row['foId'];
                 $userId=$row['userId'];
                 $amount=$row['amount'];
@@ -45,12 +47,7 @@ include "connection.php";
                 $fId=$row['fId'];
                 $foodName=$row['foodName'];
                 $totalPrice=$row['totalPrice'];
-                $orderStatus=$row['orderStatus'];
-                $status = false;
-               // $val=0;
-                if($orderStatus==1){$status = true;}
                 $checkboxStatusName = "st" . $foId ;
-               
                 echo "<tr><td>" . $foId . 
                 "</td><td>" . $userId . 
                 "</td><td>" . $fId . 
@@ -59,16 +56,44 @@ include "connection.php";
                 "</td><td>" . $totalPrice . 
                 "</td><td>" . $transactionId . 
                 "</td><td>" . $orderDate ;
-                
-                 
+                 echo "</td><td><input type='checkbox' name='$checkboxStatusName' id='$checkboxStatusName'>";
+                // echo " checked>" ;
+                 echo "</td><td><button type='submit' class='manager-button' onclick='updateOrder($foId,$checkboxStatusName);'>Update</button></td></tr>" ;
+
+                }
+
+            }
+            $query="SELECT * FROM foodorder ";
+            $result=mysqli_query($connection,$query);
+            if(!$result)
+            {
+                die("query failed " . mysqli_error());
+            }
+            while($row=mysqli_fetch_assoc($result)){
+                $orderStatus=$row['orderStatus'];
+                if($orderStatus==1){
+                $foId=$row['foId'];
+                $userId=$row['userId'];
+                $amount=$row['amount'];
+                $transactionId=$row['transactionId'];
+                $orderDate=$row['orderDate'];
+                $fId=$row['fId'];
+                $foodName=$row['foodName'];
+                $totalPrice=$row['totalPrice'];
+                $checkboxStatusName = "st" . $foId ;
+                echo "<tr><td>" . $foId . 
+                "</td><td>" . $userId . 
+                "</td><td>" . $fId . 
+                "</td><td>" . $foodName . 
+                "</td><td>" . $amount . 
+                "</td><td>" . $totalPrice . 
+                "</td><td>" . $transactionId . 
+                "</td><td>" . $orderDate ;
                  echo "</td><td><input type='checkbox' name='$checkboxStatusName' id='$checkboxStatusName'";
-                 if($status){
-                    echo " checked>" ;
+                 echo " checked>" ;
+                 echo "</td><td><button type='submit' class='manager-button' onclick='updateOrder($foId,$checkboxStatusName);'>Update</button></td></tr>" ;
+
                 }
-                else{
-                    echo " >" ;
-                }
-                echo "</td><td><button type='submit' class='manager-button' onclick='updateOrder($foId,$checkboxStatusName);'>Update</button></td></tr>" ;
 
             }
         ?>

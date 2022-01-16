@@ -3,20 +3,20 @@
     $foId= $_GET['foId'];
     $checkboxStatus=$_GET['checkboxStatus'];
     $orderStatus=NULL;
-    if($checkboxStatus){
-        $orderStatus=1;
-    }
-    else{
+    if($checkboxStatus=='false'){
         $orderStatus=0;
     }
-    //echo $foId . " " . $checkboxStatus;
+    else{
+        $orderStatus=1;
+    }
+    echo $foId . " " . $checkboxStatus . " " . $orderStatus;
      $query= "UPDATE foodorder SET orderStatus='$orderStatus' WHERE foId = '$foId' ;";
      $result=mysqli_query($connection,$query);
      if(!$result){
          die("query failed" . mysqli_error());
      }
      else{
-         header("Location:http://localhost/restManage/manager/foodOrder.php");
+        header("Location:http://localhost/restManage/manager/foodOrder.php");
      }
   
     
